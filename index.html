@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD. Tanvirul Islam - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white">
+    <!-- Cover Photo Section -->
+    <div id="coverPhoto" class="h-80 relative overflow-hidden">
+        <img src="/images/cover.jpg" alt="Cover" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        <!-- Left Sidebar -->
+        <div id="leftSidebar" class="w-full md:w-96 lg:w-80 xl:w-96 bg-gray-50 relative border-r border-gray-100">
+            <!-- Profile Image -->
+            <div id="profileImageContainer" class="px-6 relative mb-4 z-10" style="margin-top: -6rem;">
+                <img id="profileImage" src="/images/profile.jpg" alt="MD. Tanvirul Islam" 
+                     class="w-32 h-32 rounded-full border-4 border-white shadow-lg object-cover transition-all duration-300">
+            </div>
+
+            <div id="mainContent">
+                <!-- Name and Title -->
+                <div id="nameSection" class="mb-4 px-10 pb-6">
+                    <h1 class="text-xl font-bold text-gray-900 mb-1">MD. Tanvirul Islam</h1>
+                    <p class="text-gray-600 text-xs mb-2">Creative designer & Content creator</p>
+                    <div class="flex items-center text-gray-500 text-xs">
+                        <i class="fas fa-map-marker-alt mr-1"></i>
+                        <span>Bangladesh</span>
+                    </div>
+                </div>
+
+                <hr class="border-gray-200 mb-6"/>
+
+                <!-- Stats Section -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 mb-6 px-9">
+                    <div class="">
+                        <div class="text-lg font-bold text-gray-900">50+</div>
+                        <div class="text-xs text-gray-500">Projects</div>
+                    </div>
+                    <div class="">
+                        <div class="text-lg font-bold text-gray-900">30K+</div>
+                        <div class="text-xs text-gray-500">Reach</div>
+                    </div>
+                    <div class="">
+                        <div class="text-lg font-bold text-gray-900">95%</div>
+                        <div class="text-xs text-gray-500">Satisfaction</div>
+                    </div>
+                    <div class="">
+                        <div class="text-lg font-bold text-gray-900">3+</div>
+                        <div class="text-xs text-gray-500">Years</div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex gap-2 mb-6 px-9">
+                    <button class="flex-1 bg-black text-white px-3 py-2 rounded-md text-xs font-medium hover:bg-gray-800 transition-colors flex items-center justify-center">
+                        Send Email
+                        <span class="ml-2 pl-2 text-[12px]">
+                            <i class="fas fa-paper-plane"></i>
+                        </span>
+                    </button>
+
+                    <button class="flex-1 border border-gray-300 px-3 py-2 rounded-md text-xs font-medium hover:bg-gray-50 transition-colors flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2 text-black text-[16px]"></i>
+                        WhatsApp
+                    </button>
+                </div>
+
+                <!-- Video Section -->
+           
+           
+                <div class="mb-6 px-9">
+    <h3 class="text-sm font-semibold text-gray-900 mb-3">Video</h3>
+     <iframe id="youtubePlayer" 
+                class="w-full h-42 rounded-lg"
+                src="https://www.youtube.com/embed/AKMsuJZkG-c?enablejsapi=1" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+        </iframe>
+        
+    
+</div>
+
+
+
+                <!-- About Section -->
+                <div class="mb-6 px-9">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-3">About me</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed">
+                        I'm MD. Tanvirul Islam, a content creator and graphic designer who helps brands stand out through meaningful creative and storytelling.
+                    </p>
+                </div>
+
+                <!-- Status and Social -->
+                <div class="flex items-center justify-between pt-2 px-6 pb-6 border-t border-gray-200">
+                    <div class="flex items-center">
+                        <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                        <span class="text-xs text-gray-600">Open for work</span>
+                    </div>
+                    <div class="flex space-x-2">
+                        <a href="#" class="w-7 h-7 bg-gray-100 rounded flex items-center justify-center hover:bg-gray-200 transition-colors">
+                            <i class="fab fa-linkedin-in text-gray-600 text-xs"></i>
+                        </a>
+                        <a href="#" class="w-7 h-7 bg-gray-100 rounded flex items-center justify-center hover:bg-gray-200 transition-colors">
+                            <i class="fab fa-dribbble text-gray-600 text-xs"></i>
+                        </a>
+                        <a href="#" class="w-7 h-7 bg-gray-100 rounded flex items-center justify-center hover:bg-gray-200 transition-colors">
+                            <i class="fab fa-behance text-gray-600 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Content Area -->
+        <div id="rightContent" class="flex-1 p-8">
+            <!-- Tabs -->
+            <div class="mb-8">
+                <div class="flex space-x-8 border-b border-gray-200">
+                    <button class="tab-btn pb-3 text-sm font-medium text-gray-900 tab-active" data-tab="all">
+                        All Projects
+                    </button>
+                    <button class="tab-btn pb-3 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-tab="branding">
+                        Branding
+                    </button>
+                    <button class="tab-btn pb-3 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-tab="social">
+                        Social Media
+                    </button>
+                    <button class="tab-btn pb-3 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-tab="content">
+                        Content Creation
+                    </button>
+                </div>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Portfolio items will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto relative w-full">
+            <div class="sticky top-0 bg-white border-b border-gray-200 p-6 flex items-center justify-between">
+                <h3 id="modalTitle" class="text-xl font-semibold text-gray-900"></h3>
+                <button id="closeModal" class="text-gray-400 hover:text-gray-600 transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="modalContent" class="p-6">
+                <!-- Modal images will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
