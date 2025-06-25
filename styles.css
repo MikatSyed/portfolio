@@ -1,86 +1,118 @@
-     ::-webkit-scrollbar {
-            display: none;
-        }
+::-webkit-scrollbar {
+  display: none;
+}
 
-        body {
-            font-family: 'Arial', sans-serif;
-        }
-        
-        * {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+body {
+  font-family: "Arial", sans-serif;
+}
 
-        .profile-sticky {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            overflow-y: hidden;
-            z-index: 10;
-            padding-top: 0;
-        }
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
-      
 
-        
-        .profile-image-hidden {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
 
-        .name-section-hidden {
-            display: none !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            height: 0 !important;
-        }
+.profile-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: hidden;
+  z-index: 10;
+  padding-top: 0;
+}
 
-        #profileImageContainer {
-            margin-top: -4rem;
-        }
+.profile-image-hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+}
 
-        .profile-sticky #profileImageContainer {
-            margin-top: 0;
-        }
+.name-section-hidden {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+}
 
-        /* When sticky is active, remove spacing from main content */
-        .profile-sticky #mainContent {
-            padding-top: 0;
-        }
+#profileImageContainer {
+  margin-top: -4rem;
+}
 
-        .profile-sticky #mainContent > hr:first-of-type {
-            margin-top: 0;
-        }
+.profile-sticky #profileImageContainer {
+  margin-top: 0;
+}
 
-        .hover-title {
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
+/* When sticky is active, remove spacing from main content */
+.profile-sticky #mainContent {
+  padding-top: 0;
+}
 
-        .image-container:hover .hover-title {
-            transform: translateY(0);
-        }
+.profile-sticky #mainContent > hr:first-of-type {
+  margin-top: 0;
+}
 
-        .modal-backdrop {
-            backdrop-filter: blur(4px);
-        }
+/* Hover effects only for medium devices and up */
+.hover-title {
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
 
-        .tab-active {
-            border-bottom: 2px solid #000;
-            font-weight: 600;
-        }
+@media (min-width: 768px) {
+  .image-container:hover .hover-title {
+    transform: translateY(0);
+  }
+}
 
-        /* Compact layout for better space utilization */
-        .profile-sticky .px-6 {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
+/* Hide hover title on small devices */
+@media (max-width: 767px) {
+  .hover-title {
+    display: none !important;
+  }
+}
 
-        .profile-sticky .mb-6 {
-            margin-bottom: 1rem;
-        }
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+}
 
-        .profile-sticky .mb-4 {
-            margin-bottom: 0.75rem;
-        }
+.tab-active {
+  border-bottom: 2px solid #000;
+  font-weight: 600;
+}
+
+/* Compact layout for better space utilization */
+.profile-sticky .px-6 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.profile-sticky .mb-6 {
+  margin-bottom: 1rem;
+}
+
+.profile-sticky .mb-4 {
+  margin-bottom: 0.75rem;
+}
+
+/* Card title styling for small devices */
+@media (max-width: 767px) {
+  .card-title-sm {
+    display: block;
+    padding: 0.75rem 0;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #1f2937;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-title-sm {
+    display: none;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .main {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-white">
+<body class="bg-white main">
     <!-- Cover Photo Section -->
     <div id="coverPhoto" class="h-80 relative overflow-hidden">
         <img src="/images/cover.jpg" alt="Cover" class="w-full h-full object-cover">
@@ -101,7 +101,7 @@
                 </div>
 
                 <!-- Status and Social -->
-                <div class="flex items-center justify-between pt-2 px-6 pb-6 border-t border-gray-200">
+                <div class="hidden sm:flex items-center justify-between pt-2 px-6 pb-6 border-t border-gray-200">
                     <div class="flex items-center">
                         <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
                         <span class="text-xs text-gray-600">Open for work</span>
@@ -118,14 +118,16 @@
                         </a>
                     </div>
                 </div>
+
+
             </div>
         </div>
 
         <!-- Right Content Area -->
-        <div id="rightContent" class="flex-1 p-8">
+        <div id="rightContent" class="flex-1 pt-6">
             <!-- Tabs -->
-            <div class="mb-8">
-                <div class="flex space-x-8 border-b border-gray-200">
+            <div class="mb-8 ">
+                <!-- <div class="flex space-x-8 pb-6 border-b border-gray-200 px-8">
                     <button class="tab-btn pb-3 text-sm font-medium text-gray-900 tab-active" data-tab="all">
                         All Projects
                     </button>
@@ -138,25 +140,96 @@
                     <button class="tab-btn pb-3 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-tab="content">
                         Content Creation
                     </button>
-                </div>
+                </div> -->
+
+                <!-- Mobile dropdown (visible on small screens only) -->
+<!-- Mobile dropdown (visible on small screens only) -->
+<!-- Mobile dropdown (visible on small screens only) -->
+<!-- Mobile dropdown (visible on small screens only) -->
+<div class="md:hidden px-8 mb-4  pb-4">
+  <div class="relative w-full">
+    <button id="dropdownToggle" class="w-full flex justify-between items-center text-sm font-medium text-gray-700 pb-6 border-b border-gray-300">
+      <span id="selectedOption">All Projects</span>
+      <svg id="dropdownIcon" class="w-4 h-4 text-gray-500 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+
+    <div id="dropdownMenu" class="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded shadow hidden">
+      <button class="dropdown-option block w-full text-left px-4 py-3 text-sm border-b hover:bg-gray-100" data-value="all">All Projects</button>
+      <button class="dropdown-option block w-full text-left px-4 py-3 text-sm border-b hover:bg-gray-100" data-value="branding">Branding</button>
+      <button class="dropdown-option block w-full text-left px-4 py-3 text-sm border-b hover:bg-gray-100" data-value="social">Social Media</button>
+      <button class="dropdown-option block w-full text-left px-4 py-3 text-sm hover:bg-gray-100" data-value="content">Content Creation</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Tab navigation (visible on medium+ screens) -->
+<div class="hidden md:flex space-x-8 pb-6 border-b border-gray-200 px-8 mb-8">
+  <button class="tab-btn pb-3 text-sm font-medium text-gray-900 tab-active" data-tab="all">
+    All Projects
+  </button>
+  <button class="tab-btn pb-3 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-tab="branding">
+    Branding
+  </button>
+  <button class="tab-btn pb-3 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-tab="social">
+    Social Media
+  </button>
+  <button class="tab-btn pb-3 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-tab="content">
+    Content Creation
+  </button>
+</div>
+
             </div>
 
             <!-- Portfolio Grid -->
-            <div id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6 px-8">
                 <!-- Portfolio items will be dynamically inserted here -->
             </div>
+
+              <div class="flex sm:flex md:hidden items-center justify-between mt-12 py-3  border-t border-gray-200 px-8">
+    <div class="flex items-center ">
+        <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+        <span class="text-xs text-gray-600">Open for work</span>
+    </div>
+    <div class="flex space-x-2">
+        <a href="#" class="w-7 h-7 bg-gray-100 rounded flex items-center justify-center hover:bg-gray-200 transition-colors">
+            <i class="fab fa-linkedin-in text-gray-600 text-xs"></i>
+        </a>
+        <a href="#" class="w-7 h-7 bg-gray-100 rounded flex items-center justify-center hover:bg-gray-200 transition-colors">
+            <i class="fab fa-dribbble text-gray-600 text-xs"></i>
+        </a>
+        <a href="#" class="w-7 h-7 bg-gray-100 rounded flex items-center justify-center hover:bg-gray-200 transition-colors">
+            <i class="fab fa-behance text-gray-600 text-xs"></i>
+        </a>
+    </div>
+</div>
+
         </div>
     </div>
 
     <!-- Modal -->
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden z-50 flex items-center justify-center p-4">
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden z-50 flex items-center justify-center ">
         <div class="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto relative w-full">
             <div class="sticky top-0 bg-white border-b border-gray-200 p-6 flex items-center justify-between">
-                <h3 id="modalTitle" class="text-xl font-semibold text-gray-900"></h3>
-                <button id="closeModal" class="text-gray-400 hover:text-gray-600 transition-colors">
+              
+               <div class="flex items-center gap-4">
+        <button id="prevImage" class="text-gray-800 hover:text-gray-400 transition-colors">
+            <i class="fas fa-arrow-left text-xl"></i>
+        </button>
+        <button id="nextImage" class="text-gray-800 hover:text-gray-400 transition-colors">
+            <i class="fas fa-arrow-right text-xl"></i>
+        </button>
+    </div>
+
+                <button id="closeModal" class="text-gray-800 hover:text-gray-400 transition-colors">
                     <i class="fas fa-times text-xl"></i>
                 </button>
-            </div>
+              </div>
+              <h3 id="modalTitle" class="text-xl font-semibold text-gray-900 p-6"></h3>
+            
             <div id="modalContent" class="p-6">
                 <!-- Modal images will be inserted here -->
             </div>
@@ -164,5 +237,71 @@
     </div>
 
     <script src="script.js"></script>
+<script>
+  const toggleBtn = document.getElementById('dropdownToggle');
+  const dropdown = document.getElementById('dropdownMenu');
+  const selected = document.getElementById('selectedOption');
+  const options = dropdown.querySelectorAll('.dropdown-option');
+  
+
+  // Connect to portfolio grid filtering
+  function showPortfolioItems(category) {
+    const items = portfolioData[category];
+    const grid = document.getElementById("portfolioGrid");
+    grid.innerHTML = "";
+
+    items.forEach((item) => {
+      const div = document.createElement("div");
+      div.className = "image-container relative overflow-hidden rounded-lg cursor-pointer group bg-gray-100";
+      div.innerHTML = `
+        <img src="${item.images[0]}" alt="${item.title}" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
+        <div class="hover-title absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-4">
+          <h4 class="text-white font-medium text-sm">${item.title}</h4>
+        </div>`;
+      div.addEventListener("click", () => openModal(item));
+      grid.appendChild(div);
+    });
+  }
+
+  // Default view: show all projects
+  showPortfolioItems("all");
+
+  // Highlight "All Projects" visually on load
+  options.forEach(opt => {
+    if (opt.dataset.value === "all") {
+      opt.classList.add("bg-black", "text-white");
+    }
+  });
+
+  toggleBtn.addEventListener('click', () => {
+    dropdown.classList.toggle('hidden');
+  });
+
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      const selectedValue = option.dataset.value;
+      selected.textContent = option.textContent;
+
+      // Remove selection styles
+      options.forEach(o => o.classList.remove('bg-black', 'text-white'));
+
+      // Add style to selected option
+      option.classList.add('bg-black', 'text-white');
+
+      // Update portfolio items
+      showPortfolioItems(selectedValue);
+
+      // Close dropdown
+      dropdown.classList.add('hidden');
+    });
+  });
+
+  // Close dropdown if clicked outside
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target) && !toggleBtn.contains(e.target)) {
+      dropdown.classList.add('hidden');
+    }
+  });
+</script>
 </body>
 </html>
