@@ -167,7 +167,7 @@
 
 
 <!-- Tab navigation (visible on medium+ screens) -->
-<div class="hidden md:flex space-x-8 pb-6 border-b border-gray-200 px-8 mb-8">
+<div id="tabNav"  class="hidden md:flex space-x-8 pb-6 border-b border-gray-200 px-8 mb-8  ">
   <button class="tab-btn pb-3 text-sm font-medium text-gray-900 tab-active" data-tab="all">
     All Projects
   </button>
@@ -237,71 +237,6 @@
     </div>
 
     <script src="script.js"></script>
-<script>
-  const toggleBtn = document.getElementById('dropdownToggle');
-  const dropdown = document.getElementById('dropdownMenu');
-  const selected = document.getElementById('selectedOption');
-  const options = dropdown.querySelectorAll('.dropdown-option');
-  
 
-  // Connect to portfolio grid filtering
-  function showPortfolioItems(category) {
-    const items = portfolioData[category];
-    const grid = document.getElementById("portfolioGrid");
-    grid.innerHTML = "";
-
-    items.forEach((item) => {
-      const div = document.createElement("div");
-      div.className = "image-container relative overflow-hidden rounded-lg cursor-pointer group bg-gray-100";
-      div.innerHTML = `
-        <img src="${item.images[0]}" alt="${item.title}" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
-        <div class="hover-title absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-4">
-          <h4 class="text-white font-medium text-sm">${item.title}</h4>
-        </div>`;
-      div.addEventListener("click", () => openModal(item));
-      grid.appendChild(div);
-    });
-  }
-
-  // Default view: show all projects
-  showPortfolioItems("all");
-
-  // Highlight "All Projects" visually on load
-  options.forEach(opt => {
-    if (opt.dataset.value === "all") {
-      opt.classList.add("bg-black", "text-white");
-    }
-  });
-
-  toggleBtn.addEventListener('click', () => {
-    dropdown.classList.toggle('hidden');
-  });
-
-  options.forEach(option => {
-    option.addEventListener('click', () => {
-      const selectedValue = option.dataset.value;
-      selected.textContent = option.textContent;
-
-      // Remove selection styles
-      options.forEach(o => o.classList.remove('bg-black', 'text-white'));
-
-      // Add style to selected option
-      option.classList.add('bg-black', 'text-white');
-
-      // Update portfolio items
-      showPortfolioItems(selectedValue);
-
-      // Close dropdown
-      dropdown.classList.add('hidden');
-    });
-  });
-
-  // Close dropdown if clicked outside
-  document.addEventListener('click', (e) => {
-    if (!dropdown.contains(e.target) && !toggleBtn.contains(e.target)) {
-      dropdown.classList.add('hidden');
-    }
-  });
-</script>
 </body>
 </html>

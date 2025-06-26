@@ -80,60 +80,75 @@ document.getElementById("nextImage").addEventListener("click", () => {
 let isSticky = false
 
 function handleScroll() {
-  const coverPhotoBottom = coverPhoto.offsetTop + coverPhoto.offsetHeight
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+  const coverBottom = coverPhoto.offsetTop + coverPhoto.offsetHeight;
+  const scrollTop   = window.pageYOffset || document.documentElement.scrollTop;
+  const tabNav      = document.getElementById('tabNav');
 
   if (window.innerWidth >= 768) {
-    if (scrollTop >= coverPhotoBottom - 50 && !isSticky) {
-      // Add sticky header with horizontal layout
-      const stickyHeader = document.createElement("div")
-      stickyHeader.className = ""
-      stickyHeader.id = "stickyHeader"
+    // ----- SCROLL PAST COVER: activate sticky state -----
+    if (scrollTop >= coverBottom - 50 && !isSticky) {
+      // --- left sidebar sticky setup ---
+      const stickyHeader = document.createElement("div");
+      stickyHeader.id = "stickyHeader";
       stickyHeader.innerHTML = `
-       <div class="flex flex-row items-center justify-start p-4 pb-0 mb-0 gap-2">
-        <img src="/images/profile.jpg" alt="MD. Tanvirul Islam" class="h-28 w-28 rounded-full border-4 border-white object-cover transition-all duration-300">
-        <div class="name-info flex-1">
-          <h1 class="text-xl font-bold text-gray-900 mb-1">MD. Tanvirul Islam</h1>
-                    <p class="text-gray-600 text-xs mb-2">Creative designer & Content creator</p>
+        <div class="flex flex-row items-center justify-start p-4 pb-0 mb-0 gap-2">
+          <img src="/images/profile.jpg" alt="MD. Tanvirul Islam"
+               class="h-28 w-28 rounded-full border-4 border-white object-cover transition-all duration-300">
+          <div class="name-info flex-1">
+            <h1 class="text-xl font-bold text-gray-900 mb-1">MD. Tanvirul Islam</h1>
+            <p class="text-gray-600 text-xs mb-2">Creative designer & Content creator</p>
             <div class="flex items-center text-gray-500 text-xs">
-                        <i class="fas fa-map-marker-alt mr-1"></i>
-                        <span>Bangladesh</span>
-                    </div>
+              <i class="fas fa-map-marker-alt mr-1"></i>
+              <span>Bangladesh</span>
+            </div>
+          </div>
         </div>
-       </div>
-      `
+      `;
+      leftSidebar.classList.add("profile-sticky");
+      leftSidebar.style.width = window.innerWidth >= 1280
+        ? "384px"
+        : window.innerWidth >= 1024
+          ? "320px"
+          : "384px";
+      leftSidebar.insertBefore(stickyHeader, leftSidebar.firstChild);
 
-      leftSidebar.classList.add("profile-sticky")
-      leftSidebar.style.width = window.innerWidth >= 1280 ? "384px" : window.innerWidth >= 1024 ? "320px" : "384px"
-      leftSidebar.insertBefore(stickyHeader, leftSidebar.firstChild)
+      profileImage.classList.add("profile-image-hidden");
+      nameSection.classList.add("name-section-hidden");
 
-      // Hide original profile image and name section completely
-      profileImage.classList.add("profile-image-hidden")
-      nameSection.classList.add("name-section-hidden")
+      rightContent.style.height = "100vh";
+      rightContent.style.overflowY = "auto";
 
-      // Make right content scrollable without changing position
-      rightContent.style.height = "100vh"
-      rightContent.style.overflowY = "auto"
-
-      isSticky = true
-    } else if (scrollTop < coverPhotoBottom - 50 && isSticky) {
-      // Remove sticky header
-      const stickyHeader = document.getElementById("stickyHeader")
-      if (stickyHeader) {
-        stickyHeader.remove()
+      // --- right tabNav sticky setup ---
+      if (tabNav && !tabNav.classList.contains("tabs-fixed")) {
+        tabNav.classList.add("tabs-fixed");
+        tabNav.style.width = `calc(100% - ${leftSidebar.offsetWidth}px)`;
+        rightContent.style.paddingTop = `${tabNav.offsetHeight}px`;
       }
 
-      leftSidebar.classList.remove("profile-sticky")
-      leftSidebar.style.width = ""
+      isSticky = true;
+    }
+    // ----- SCROLL BACK UP: remove sticky state -----
+    else if (scrollTop < coverBottom - 50 && isSticky) {
+      // --- left sidebar restore ---
+      const oldHeader = document.getElementById("stickyHeader");
+      if (oldHeader) oldHeader.remove();
 
-      // Show original profile image and name section
-      profileImage.classList.remove("profile-image-hidden")
-      nameSection.classList.remove("name-section-hidden")
+      leftSidebar.classList.remove("profile-sticky");
+      leftSidebar.style.width = "";
+      profileImage.classList.remove("profile-image-hidden");
+      nameSection.classList.remove("name-section-hidden");
 
-      rightContent.style.height = ""
-      rightContent.style.overflowY = ""
+      rightContent.style.height = "";
+      rightContent.style.overflowY = "";
 
-      isSticky = false
+      // --- right tabNav restore ---
+      if (tabNav && tabNav.classList.contains("tabs-fixed")) {
+        tabNav.classList.remove("tabs-fixed");
+        tabNav.style.width = "";
+        rightContent.style.paddingTop = "";
+      }
+
+      isSticky = false;
     }
   }
 }

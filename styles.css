@@ -23,6 +23,20 @@ body {
   padding-top: 0;
 }
 
+
+/* fixed right‐hand tab bar */
+#tabNav.tabs-fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding-top: 1.5rem;
+  
+}
+
+
 .profile-image-hidden {
   opacity: 0;
   transform: translateY(-20px);
