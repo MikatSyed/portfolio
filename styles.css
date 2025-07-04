@@ -50,7 +50,13 @@ body {
 }
 
 #profileImageContainer {
-  margin-top: -4rem;
+  margin-top: -6rem !important;
+  transition: margin-top 0.3s ease;
+}
+
+/* when you add “scrolled-profile” on scroll */
+#profileImageContainer.scrolled-profile {
+  margin-top: -7rem !important;
 }
 
 .profile-sticky #profileImageContainer {

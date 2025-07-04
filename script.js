@@ -83,6 +83,14 @@ function handleScroll() {
   const coverBottom = coverPhoto.offsetTop + coverPhoto.offsetHeight;
   const scrollTop   = window.pageYOffset || document.documentElement.scrollTop;
   const tabNav      = document.getElementById('tabNav');
+  const container   = document.getElementById('profileImageContainer');
+
+  
+  if (scrollTop >= coverBottom - 50) {
+    container.classList.add('scrolled-profile');
+  } else {
+    container.classList.remove('scrolled-profile');
+  }
 
   if (window.innerWidth >= 768) {
     // ----- SCROLL PAST COVER: activate sticky state -----
@@ -117,6 +125,7 @@ function handleScroll() {
 
       rightContent.style.height = "100vh";
       rightContent.style.overflowY = "auto";
+      profileImageContainer.classList.add("scrolled-profile");
 
       // --- right tabNav sticky setup ---
       if (tabNav && !tabNav.classList.contains("tabs-fixed")) {
