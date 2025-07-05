@@ -288,48 +288,55 @@
     </div>
 
     <!-- Modal -->
+  <!-- Modal Backdrop -->
+<div
+  id="modal"
+  class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden z-50 flex items-center justify-center px-4"
+>
+  <!-- Modal Container -->
+  <div
+    class="bg-white rounded-lg w-full max-w-4xl  md:max-w-full max-h-[96vh] overflow-y-auto relative"
+  >
+    <!-- Header -->
     <div
-      id="modal"
-      class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden z-50 flex items-center justify-center"
+      class="sticky top-0 bg-white border-b border-gray-200 p-6 flex items-center justify-between"
     >
-      <div
-        class="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto relative w-full"
-      >
-        <div
-          class="sticky top-0 bg-white border-b border-gray-200 p-6 flex items-center justify-between"
+      <div class="flex items-center gap-4">
+        <button
+          id="prevImage"
+          class="text-gray-800 hover:text-gray-400 transition-colors"
         >
-          <div class="flex items-center gap-4">
-            <button
-              id="prevImage"
-              class="text-gray-800 hover:text-gray-400 transition-colors"
-            >
-              <i class="fas fa-arrow-left text-xl"></i>
-            </button>
-            <button
-              id="nextImage"
-              class="text-gray-800 hover:text-gray-400 transition-colors"
-            >
-              <i class="fas fa-arrow-right text-xl"></i>
-            </button>
-          </div>
-
-          <button
-            id="closeModal"
-            class="text-gray-800 hover:text-gray-400 transition-colors"
-          >
-            <i class="fas fa-times text-xl"></i>
-          </button>
-        </div>
-        <h3
-          id="modalTitle"
-          class="text-xl font-semibold text-gray-900 p-6"
-        ></h3>
-
-        <div id="modalContent" class="p-6">
-          <!-- Modal images will be inserted here -->
-        </div>
+          <i class="fas fa-arrow-left text-xl"></i>
+        </button>
+        <button
+          id="nextImage"
+          class="text-gray-800 hover:text-gray-400 transition-colors"
+        >
+          <i class="fas fa-arrow-right text-xl"></i>
+        </button>
       </div>
+
+      <button
+        id="closeModal"
+        class="text-gray-800 hover:text-gray-400 transition-colors"
+      >
+        <i class="fas fa-times text-xl"></i>
+      </button>
     </div>
+
+    <!-- Title -->
+    <h3
+      id="modalTitle"
+      class="text-xl font-semibold text-gray-900 p-6"
+    ></h3>
+
+    <!-- Content -->
+    <div id="modalContent" class="p-6">
+      <!-- Modal images will be inserted here -->
+    </div>
+  </div>
+</div>
+
 
     <script src="script.js"></script>
   </body>
