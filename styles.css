@@ -73,6 +73,9 @@ body {
 }
 
 .text-name{
+  font-size: 18px !important;
+}
+.text-title{
   font-size: 12px !important;
 }
 
