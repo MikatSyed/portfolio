@@ -56,7 +56,7 @@ body {
 
 /* when you add “scrolled-profile” on scroll */
 #profileImageContainer.scrolled-profile {
-  margin-top: -7.2rem !important;
+  margin-top: -7.5rem !important;
 }
 
 .profile-sticky #profileImageContainer {
@@ -76,7 +76,7 @@ body {
   font-size: 18px !important;
 }
 .text-title{
-  font-size: 10px !important;
+  font-size: 12px !important;
 }
 
 /* Hover effects only for medium devices and up */
