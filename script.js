@@ -103,7 +103,7 @@ function handleScroll() {
           <img src="/images/profile.jpg" alt="MD. Tanvirul Islam"
                class="h-28 w-28 rounded-full border-4 border-white object-cover transition-all duration-300">
           <div class="name-info flex-1">
-            <h1 class="text-xl font-bold text-gray-900 mb-1">MD. Tanvirul Islam</h1>
+            <h1 class="text-name font-bold text-gray-900 mb-1">MD. Tanvirul Islam</h1>
             <p class="text-gray-600 text-xs mb-2">Creative designer & Content creator</p>
             <div class="flex items-center text-gray-500 text-xs">
               <i class="fas fa-map-marker-alt mr-1"></i>

@@ -72,6 +72,10 @@ body {
   margin-top: 0;
 }
 
+.text-name{
+  font-size: 12px !important;
+}
+
 /* Hover effects only for medium devices and up */
 .hover-title {
   transform: translateY(100%);
