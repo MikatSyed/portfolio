@@ -123,6 +123,9 @@ function handleScroll() {
       profileImage.classList.add("profile-image-hidden");
       nameSection.classList.add("name-section-hidden");
 
+      // leftContent.style.height = "100vh";
+      // leftContent.style.overflowY = "auto";
+
       rightContent.style.height = "100vh";
       rightContent.style.overflowY = "auto";
       profileImageContainer.classList.add("scrolled-profile");
